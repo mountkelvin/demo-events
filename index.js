@@ -17,6 +17,10 @@ socket.on('connect', () => {
   console.log('Connected')
   socket.emit('subscribe', { siteKey: SITE_KEY })
 })
+socket.on('noSuchSiteKey', () => {
+  console.log('Invalid site key')
+  process.exit(1)
+})
 
 socket.on('peripheralInput', ({ data }) => {
   console.log(data)
