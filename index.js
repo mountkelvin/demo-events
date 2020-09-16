@@ -22,6 +22,10 @@ socket.on('noSuchSiteKey', () => {
   process.exit(1)
 })
 
-socket.on('peripheralInput', ({ data }) => {
+socket.on('peripheralInput', ({ data }) => { // motion and door sensors
+  console.log(data)
+})
+
+socket.on('sensorInput', ({ data }) => { // temperature and humidity sensors
   console.log(data)
 })
